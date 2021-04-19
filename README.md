@@ -55,7 +55,8 @@ $ python Compression_ADMM.py
 ```
 
 # Citation
-Please cite our paper if you find our paper useful for your research. 
+Please cite our paper if you find our paper useful for your research.
+```bibtex
 @INPROCEEDINGS{9053233,
   author={B. {Liu} and A. {Cao} and H. -S. {Kim}},
   booktitle={ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
@@ -65,3 +66,4 @@ Please cite our paper if you find our paper useful for your research.
   number={},
   pages={3177-3181},
   doi={10.1109/ICASSP40776.2020.9053233}}
+```
