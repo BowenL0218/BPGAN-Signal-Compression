@@ -2,7 +2,7 @@
 Codes for [Unified Signal Compression Using Generative Adversarial Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9053233) (ICASSP 2020), a generative adverdarial networks (GAN) based signal (Image/Speech) compression algorithm.
 
 # Introduction
-The proposed unified compression framework uses a generative adversarial network (GAN) to compress heterogeneous signals. The compressed signal is represented as a latent vector and fed into a generator network that is trained to produce high quality realistic signals that minimize a target objective function. To efficiently quantize the compressed signal, non-uniformly quantized optimal latent vectors are identified by iterative back-propagation with alternating direction method of multipliers (ADMM) optimization performed for each iteration. 
+The proposed unified compression framework (BPGAN) uses a GAN to compress heterogeneous signals. The compressed signal is represented as a latent vector and fed into a generator network that is trained to produce high quality realistic signals that minimize a target objective function. To efficiently quantize the compressed signal, non-uniformly quantized optimal latent vectors are identified by iterative back-propagation with alternating direction method of multipliers (ADMM) optimization performed for each iteration. 
 
 ## Framework
 ![Flow chart](https://github.com/BowenL0218/BPGAN-Signal-Compression/blob/main/Images/flowchart.png)
