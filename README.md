@@ -1,7 +1,7 @@
 # Unified Signal Compression Using Generative Adversarial Networks
 Codes for [Unified Signal Compression Using Generative Adversarial Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9053233) (ICASSP 2020), a generative adverdarial networks (GAN) based signal (Image/Speech) compression algorithm.
 
-## Introduction
+# Introduction
 The proposed unified compression framework uses a generative adversarial network (GAN) to compress heterogeneous signals. The compressed signal is represented as a latent vector and fed into a generator network that is trained to produce high quality realistic signals that minimize a target objective function. To efficiently quantize the compressed signal, non-uniformly quantized optimal latent vectors are identified by iterative back-propagation with alternating direction method of multipliers (ADMM) optimization performed for each iteration. 
 
 ## Framework
@@ -21,10 +21,27 @@ In order to use the datasets used in the paper, please download the [Open Image 
 - The compressed signal is the input for the generator network. 
 
 ## ADMM quantization
-To further reduce the bitrate of the compressed signal, we applied ADMM quantization [reference paper](https://arxiv.org/abs/1812.11677) for the compressed signal by searching the optimal latent through back-propagation iteratively.
+To further reduce the bitrate of the compressed signal, we applied [ADMM quantization](https://arxiv.org/abs/1812.11677) for the compressed signal by searching the optimal quantized latent through back-propagation iteratively.
 
 ## Huffman Coding
-To use the entropy coding method in this paper, download the general code library in python with [arithmetic coding](https://github.com/ahmedfgad/ArithmeticEncodingPython). 
+To further reduce the size of the compressed signal, we implemented the Huffman coding as the final compression step in our framework.  
+
+# Code
+
+## Installation (For Linux)
+- Install Pytorch and Torchvision [website](https://pytorch.org/)
+- Install requirement package libfftw3-dev, liblapack-dev, ltfatpy, librosa
+```sh
+$ sudo apt install libfftw3-dev
+$ sudo apt install liblapack-dev
+$ pip install ltfatpy, librosa 
+```
+
+## Train the model
+With all the package and data downloaded, train the compression model with commend:
+```sh
+$ python train.py
+```
 
 ## Test pretrained model
 To tested the result without ADMM quantization,
@@ -37,5 +54,14 @@ To test the result with ADMM quantization
 $ python Compression_ADMM.py
 ```
 
-## Citation
+# Citation
 Please cite our paper if you find our paper useful for your research. 
+@INPROCEEDINGS{9053233,
+  author={B. {Liu} and A. {Cao} and H. -S. {Kim}},
+  booktitle={ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Unified Signal Compression Using Generative Adversarial Networks}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={3177-3181},
+  doi={10.1109/ICASSP40776.2020.9053233}}
